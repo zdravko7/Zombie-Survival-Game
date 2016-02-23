@@ -46,8 +46,14 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Movement.cs" />
+     <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
-     <Compile Include="Assets\Scripts\Zombie.cs" />
+     <Compile Include="Assets\Scripts\ZombieDown.cs" />
+     <Compile Include="Assets\Scripts\ZombieLeft.cs" />
+     <Compile Include="Assets\Scripts\ZombieRight.cs" />
+     <Compile Include="Assets\Scripts\ZombieUp.cs" />
+     <None Include="Assets\Models\Sonic Generations\Sonic (Modern)\Credits.txt" />
+     <None Include="Assets\Models\Sonic Generations\Amy\Tag.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/Game Development/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

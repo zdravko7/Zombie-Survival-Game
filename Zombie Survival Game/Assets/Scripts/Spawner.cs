@@ -1,63 +1,69 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class Spawner : MonoBehaviour {
 
-    public System.Random directionRandom = new System.Random();
-    public Transform zombie;
+    public Transform zombieRight;
+    public Transform zombieLeft;
+    public Transform zombieUp;
+    public Transform zombieDown;
+
+    public float enemyMovementSpeed = 0.2f;
+    public ulong spawnTime = 1;
+    ulong time = 1;
 
 	// Use this for initialization
 	void Start () {
-
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-        int newDirection = directionRandom.Next(1,5);
-        string direction = "";
+        time++;
+
+        if (time % (spawnTime * 60) == 0)
+        {
+            ZombieSpawner();
+        }
+       
 
         //1 = up
         //2 = right
         //3 = down
         //4 = left
+	}
 
-        switch (newDirection)
-        {      
+    void ZombieSpawner()
+    {
+        int direction = Random.Range(1, 5);
+
+        switch (direction)
+        {
+
             case 1:
-                direction = "up";
+                Instantiate(zombieLeft, new Vector3(13, 0, 7), new Quaternion());
 
-                Instantiate(zombie, new Vector3(5, 0, 3), new Quaternion());
 
                 break;
 
             case 2:
-                
+                Instantiate(zombieRight, new Vector3(-13, 0, 7), new Quaternion());
 
-                direction = "right";
-                Instantiate(zombie, new Vector3(5,0,3), new Quaternion());
-               
+
                 break;
 
-
             case 3:
-                direction = "down";
-                Instantiate(zombie, new Vector3(5, 0, 3), new Quaternion());
-
+                Instantiate(zombieUp, new Vector3(0, -8, 7), new Quaternion());
 
                 break;
 
 
             case 4:
-                direction = "left";
-                Instantiate(zombie, new Vector3(5, 0, 3), new Quaternion());
+                Instantiate(zombieDown, new Vector3(0, 7, 7), new Quaternion());
 
                 break;
+
         }
-
-        Debug.Log(newDirection.ToString());
-
-	}
+    }
 }

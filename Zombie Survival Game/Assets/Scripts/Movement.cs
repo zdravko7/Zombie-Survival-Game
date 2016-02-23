@@ -31,18 +31,22 @@ public class Movement : MonoBehaviour {
         if (Input.GetKey("right"))
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = spriteRight;
+            transform.Translate(Vector2.right * Time.deltaTime * 5);
         }
         else if (Input.GetKey("left"))
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = spriteLeft;
+            transform.Translate(Vector2.left * Time.deltaTime * 5);
         }
         else if (Input.GetKey("up"))
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = spriteUp;
+            transform.Translate(Vector2.up * Time.deltaTime * 5);
         }
         else if (Input.GetKey("down"))
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = spriteDown;
+            transform.Translate(Vector2.down * Time.deltaTime * 5);
         }
 
         //mouse input
