@@ -8,6 +8,11 @@ public class Movement : MonoBehaviour {
     public Sprite spriteUp;
     public Sprite spriteDown;
 
+    public Transform bulletRight;
+    public Transform bulletLeft;
+    public Transform bulletUp;
+    public Transform bulletDown;
+
 	// Use this for initialization
 	void Start () {
 
@@ -23,32 +28,41 @@ public class Movement : MonoBehaviour {
 	}
 
 
-
-
     public void InputHandler()
     {
         //keyboard input
-        if (Input.GetKey("right"))
+        if (Input.GetKeyDown("right"))
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = spriteRight;
-            transform.Translate(Vector2.right * Time.deltaTime * 5);
+            Instantiate(bulletRight, new Vector3(0, 0.5f, 0), new Quaternion());
+
+            //transform.Translate(Vector2.right * Time.deltaTime * 5);
         }
-        else if (Input.GetKey("left"))
+        else if (Input.GetKeyDown("left"))
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = spriteLeft;
-            transform.Translate(Vector2.left * Time.deltaTime * 5);
+            Instantiate(bulletLeft, new Vector3(0, 0.5f, 0), new Quaternion());
+            //Instantiate(bullet, new Vector3(0, 0, 0), new Quaternion());
+           
+
+            //transform.Translate(Vector2.left * Time.deltaTime * 5);
         }
-        else if (Input.GetKey("up"))
+        else if (Input.GetKeyDown("up"))
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = spriteUp;
-            transform.Translate(Vector2.up * Time.deltaTime * 5);
+            Instantiate(bulletUp, new Vector3(0, 0.5f, 0), new Quaternion());
+            //Instantiate(bullet, new Vector3(0, 0, 0), new Quaternion());
+            //transform.Translate(Vector2.up * Time.deltaTime * 5);
         }
-        else if (Input.GetKey("down"))
+        else if (Input.GetKeyDown("down"))
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = spriteDown;
-            transform.Translate(Vector2.down * Time.deltaTime * 5);
+            Instantiate(bulletDown, new Vector3(0, 0.5f, 0), new Quaternion());
+            //Instantiate(bullet, new Vector3(0, 0, 0), new Quaternion());
+            //transform.Translate(Vector2.down * Time.deltaTime * 5);
         }
 
+        
         //mouse input
         if (Input.GetMouseButtonDown(0))
         {
