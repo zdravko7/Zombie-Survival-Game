@@ -12,8 +12,15 @@ public class BulletDown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int movementSpeed = 5;
-        transform.Translate(Vector2.down * Time.deltaTime * movementSpeed);
+        int shootingSpeed = 35;
+        transform.Translate(Vector2.down * Time.deltaTime * shootingSpeed);
+    }
 
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Zombie")
+        {
+            Destroy(gameObject);
+        }
     }
 }

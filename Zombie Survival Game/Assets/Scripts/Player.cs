@@ -8,7 +8,7 @@ public class Player : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D col)
     {
         Debug.Log("dead");
-
+      
         if (col.gameObject.tag == "Zombie")
         {
             isAlive = false;            

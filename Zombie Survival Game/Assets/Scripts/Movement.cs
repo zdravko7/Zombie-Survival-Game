@@ -13,6 +13,10 @@ public class Movement : MonoBehaviour {
     public Transform bulletUp;
     public Transform bulletDown;
 
+    public float timeBetweenAttacks;
+
+    private ulong timer;
+
 	// Use this for initialization
 	void Start () {
 
@@ -23,6 +27,9 @@ public class Movement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        timer++;
+        timeBetweenAttacks /= 1.0000001f;
+
         //keyboard input
         InputHandler();    
 	}
@@ -31,35 +38,44 @@ public class Movement : MonoBehaviour {
     public void InputHandler()
     {
         //keyboard input
-        if (Input.GetKeyDown("right"))
+        if (Input.GetKeyDown("right") && timer > timeBetweenAttacks * 60)
         {
+            
             gameObject.GetComponent<SpriteRenderer>().sprite = spriteRight;
-            Instantiate(bulletRight, new Vector3(0, 0.5f, 0), new Quaternion());
+            Instantiate(bulletRight, new Vector3(0, 0.5f, 0), new Quaternion(0, 0, 0, 0));
+
+            timer = 0;
 
             //transform.Translate(Vector2.right * Time.deltaTime * 5);
         }
-        else if (Input.GetKeyDown("left"))
+        else if (Input.GetKeyDown("left") && timer > timeBetweenAttacks*60)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = spriteLeft;
             Instantiate(bulletLeft, new Vector3(0, 0.5f, 0), new Quaternion());
             //Instantiate(bullet, new Vector3(0, 0, 0), new Quaternion());
-           
+
+            timer = 0;
 
             //transform.Translate(Vector2.left * Time.deltaTime * 5);
         }
-        else if (Input.GetKeyDown("up"))
+        else if (Input.GetKeyDown("up") && timer > timeBetweenAttacks * 60)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = spriteUp;
             Instantiate(bulletUp, new Vector3(0, 0.5f, 0), new Quaternion());
             //Instantiate(bullet, new Vector3(0, 0, 0), new Quaternion());
             //transform.Translate(Vector2.up * Time.deltaTime * 5);
+            timer = 0;
+
         }
-        else if (Input.GetKeyDown("down"))
+        else if (Input.GetKeyDown("down") && timer > timeBetweenAttacks * 60)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = spriteDown;
             Instantiate(bulletDown, new Vector3(0, 0.5f, 0), new Quaternion());
             //Instantiate(bullet, new Vector3(0, 0, 0), new Quaternion());
             //transform.Translate(Vector2.down * Time.deltaTime * 5);
+
+            timer = 0;
+
         }
 
         

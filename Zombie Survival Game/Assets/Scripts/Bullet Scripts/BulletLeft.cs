@@ -12,10 +12,15 @@ public class BulletLeft : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        int shootingSpeed = 35;
+        transform.Translate(Vector2.left * Time.deltaTime * shootingSpeed);
+    }
 
-        int movementSpeed = 5;
-
-        transform.Translate(Vector2.left * Time.deltaTime * movementSpeed);
-
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Zombie")
+        {
+            Destroy(gameObject);
+        }
     }
 }

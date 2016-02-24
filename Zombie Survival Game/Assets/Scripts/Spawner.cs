@@ -43,13 +43,11 @@ public class Spawner : MonoBehaviour {
 
             case 1:
                 Instantiate(zombieLeft, new Vector3(13, 0, 7), new Quaternion());
-
-
+                
                 break;
 
             case 2:
                 Instantiate(zombieRight, new Vector3(-13, 0, 7), new Quaternion());
-
 
                 break;
 
@@ -58,9 +56,8 @@ public class Spawner : MonoBehaviour {
 
                 break;
 
-
             case 4:
-                Instantiate(zombieDown, new Vector3(0, 7, 7), new Quaternion());
+                Instantiate(zombieDown, new Vector3(0, 9, 7), new Quaternion());
 
                 break;
 
