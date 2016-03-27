@@ -22,7 +22,7 @@ public class Spawner : MonoBehaviour {
 
         time++;
 
-        if (time % (spawnTime * 60) == 0)
+        if (time % (spawnTime * 35) == 0)
         {
             ZombieSpawner();
         }

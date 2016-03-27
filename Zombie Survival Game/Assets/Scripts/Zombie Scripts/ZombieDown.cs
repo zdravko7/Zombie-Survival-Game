@@ -9,7 +9,8 @@ public class ZombieDown : MonoBehaviour
 
     void Start()
     {
-        movementSpeed = 5;
+        decimal timePassed = GameObject.Find("TimeKeeper").GetComponent<Timer>().timer;
+        movementSpeed += (float)timePassed / 5;
     }
 
     void Update()
@@ -21,6 +22,13 @@ public class ZombieDown : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        Destroy(gameObject);
+        if (col.gameObject.tag == "Player" || col.gameObject.tag == "Projectile")
+        {
+            Destroy(gameObject);
+            if (col.gameObject.tag == "Projectile")
+            {
+                GameObject.Find("ScoreKeeper").GetComponent<ScoreKeeper>().score += 1000;
+            }
+        }
     }
 }
