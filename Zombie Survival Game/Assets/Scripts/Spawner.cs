@@ -11,8 +11,6 @@ public class Spawner : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        AudioSource audio = GetComponent<AudioSource>();
-        audio.Play();
 	}
 	
 	// Update is called once per frame
@@ -24,12 +22,6 @@ public class Spawner : MonoBehaviour {
         {
             ZombieSpawner();
         }
-       
-
-        //1 = up
-        //2 = right
-        //3 = down
-        //4 = left
 	}
 
     void ZombieSpawner()
