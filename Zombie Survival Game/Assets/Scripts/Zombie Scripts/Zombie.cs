@@ -37,10 +37,11 @@ public class Zombie : MonoBehaviour
                 directionV2 = Vector2.up; 
                 break;
         }
+
         anim.SetTrigger(direction);
 
         decimal timePassed = GameObject.Find("TimeKeeper").GetComponent<Timer>().timer;
-        movementSpeed += (float)timePassed / 5;
+        movementSpeed += (float)timePassed / 7;
     }
 
     void Update()
@@ -58,7 +59,7 @@ public class Zombie : MonoBehaviour
             
             if (col.gameObject.tag == "Projectile")
             {
-                GameObject.Find("ScoreKeeper").GetComponent<ScoreKeeper>().score += 1000;
+                GameObject.Find("ScoreKeeper").GetComponent<ScoreKeeper>().score += 100;
             }
         }
     }

@@ -42,7 +42,7 @@ public class Movement : MonoBehaviour {
         {
             
             gameObject.GetComponent<SpriteRenderer>().sprite = spriteRight;
-            Instantiate(bulletRight, new Vector3(0, 0.5f, 0), new Quaternion(0, 0, 0, 0));
+            Instantiate(bulletRight, new Vector3(0, 0.6f, 0), new Quaternion(0, 0, 0, 0));
 
             timer = 0;
 
@@ -51,7 +51,7 @@ public class Movement : MonoBehaviour {
         else if (Input.GetKeyDown("left") && timer > timeBetweenAttacks*60)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = spriteLeft;
-            Instantiate(bulletLeft, new Vector3(0, 0.5f, 0), new Quaternion());
+            Instantiate(bulletLeft, new Vector3(0, 0.74f, 0), new Quaternion());
             //Instantiate(bullet, new Vector3(0, 0, 0), new Quaternion());
 
             timer = 0;
@@ -61,7 +61,7 @@ public class Movement : MonoBehaviour {
         else if (Input.GetKeyDown("up") && timer > timeBetweenAttacks * 60)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = spriteUp;
-            Instantiate(bulletUp, new Vector3(0, 0.5f, 0), new Quaternion());
+            Instantiate(bulletUp, new Vector3(0.3f, 0.75f, 0), new Quaternion());
             //Instantiate(bullet, new Vector3(0, 0, 0), new Quaternion());
             //transform.Translate(Vector2.up * Time.deltaTime * 5);
             timer = 0;
@@ -70,7 +70,7 @@ public class Movement : MonoBehaviour {
         else if (Input.GetKeyDown("down") && timer > timeBetweenAttacks * 60)
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = spriteDown;
-            Instantiate(bulletDown, new Vector3(0, 0.5f, 0), new Quaternion());
+            Instantiate(bulletDown, new Vector3(-0.2f, 0.5f, 0), new Quaternion());
             //Instantiate(bullet, new Vector3(0, 0, 0), new Quaternion());
             //transform.Translate(Vector2.down * Time.deltaTime * 5);
 

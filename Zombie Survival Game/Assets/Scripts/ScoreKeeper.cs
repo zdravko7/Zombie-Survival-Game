@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -7,8 +8,10 @@ public class ScoreKeeper : MonoBehaviour {
     public ulong score;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start ()
+	{
+	    //PlayerPrefs.SetInt("High Score", 0);
+	    Debug.Log(PlayerPrefs.GetInt("High Score"));
 	}
 	
 	// Update is called once per frame

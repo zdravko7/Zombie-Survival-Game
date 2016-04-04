@@ -1,17 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour {
-
-    bool isAlive = true;
+public class Player : MonoBehaviour
+{
+    public ScoreKeeper scoreKeeper;
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("dead");
-      
         if (col.gameObject.tag == "Zombie")
         {
-            isAlive = false;            
+            if (PlayerPrefs.GetInt("High Score") < (int)scoreKeeper.score)
+            {
+                PlayerPrefs.SetInt("High Score", (int)scoreKeeper.score);
+            }
+          
+            SceneManager.LoadScene("GameOver");   
         }
     }
 }
