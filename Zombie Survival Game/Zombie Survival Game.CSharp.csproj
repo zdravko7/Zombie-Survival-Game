@@ -57,6 +57,12 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -68,10 +74,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Bullet Scripts\BulletDown.cs" />
-    <Compile Include="Assets\Scripts\Bullet Scripts\BulletLeft.cs" />
-    <Compile Include="Assets\Scripts\Bullet Scripts\BulletRight.cs" />
-    <Compile Include="Assets\Scripts\Bullet Scripts\BulletUp.cs" />
+    <Compile Include="Assets\Scripts\Bullet Scripts\Bullet.cs" />
+    <Compile Include="Assets\Scripts\HighScore.cs" />
+    <Compile Include="Assets\Scripts\MenuManager.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\ScoreKeeper.cs" />
@@ -80,8 +85,7 @@
     <Compile Include="Assets\Scripts\Zombie Scripts\Zombie.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Models\Sonic Generations\Amy\Tag.txt" />
-    <None Include="Assets\Models\Sonic Generations\Sonic (Modern)\Credits.txt" />
+    <None Include="Assets\Fonts\Zombie_Holocaust_Font_Read_Me.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>

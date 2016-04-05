@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     public ScoreKeeper scoreKeeper;
 
+    public string lookingAt;
+
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.tag == "Zombie")
