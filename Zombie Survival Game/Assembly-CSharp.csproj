@@ -45,10 +45,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Bullet Scripts\BulletDown.cs" />
-     <Compile Include="Assets\Scripts\Bullet Scripts\BulletLeft.cs" />
-     <Compile Include="Assets\Scripts\Bullet Scripts\BulletRight.cs" />
-     <Compile Include="Assets\Scripts\Bullet Scripts\BulletUp.cs" />
+     <Compile Include="Assets\Scripts\Bullet.cs" />
      <Compile Include="Assets\Scripts\HighScore.cs" />
      <Compile Include="Assets\Scripts\MenuManager.cs" />
      <Compile Include="Assets\Scripts\Movement.cs" />
@@ -56,10 +53,8 @@
      <Compile Include="Assets\Scripts\ScoreKeeper.cs" />
      <Compile Include="Assets\Scripts\Spawner.cs" />
      <Compile Include="Assets\Scripts\Timer.cs" />
-     <Compile Include="Assets\Scripts\Zombie Scripts\Zombie.cs" />
-     <None Include="Assets\Models\Sonic Generations\Sonic (Modern)\Credits.txt" />
+     <Compile Include="Assets\Scripts\Zombie.cs" />
      <None Include="Assets\Fonts\Zombie_Holocaust_Font_Read_Me.txt" />
-     <None Include="Assets\Models\Sonic Generations\Amy\Tag.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>E:/Game Development/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
